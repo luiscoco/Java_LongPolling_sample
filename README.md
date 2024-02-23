@@ -278,6 +278,13 @@ In a real-world application, you should consider error handling, efficient resou
 
 ### 3.1. Running the Server
 
+We click in the left side menu the **Spring Boot Dashboard** button
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/b15ffbc8-d650-4d67-9110-98bc00de7856)
+
+We press the run button
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/414e9156-a299-41e4-a85b-a689bcd37dca)
 
 
 
