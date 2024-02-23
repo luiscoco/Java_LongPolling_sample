@@ -260,18 +260,6 @@ and in case of an error, it waits for 5 seconds before retrying, which is a basi
 
 ## 3. Running the Example
 
-Start the Spring Boot application by running the main class from your IDE or using the command line (./mvnw spring-boot:run if you're using Maven)
-
-Run the Java client by executing the **LongPollingClient class**
-
-The server will hold each client request for about 10 seconds (simulating data availability delay) before responding
-
-Once the client receives the response, it immediately sends another request, demonstrating the long polling technique
-
-Remember, this is a basic example for demonstration purposes
-
-In a real-world application, you should consider error handling, efficient resource use, and scalability
-
 **Server Application**: Import the server application into your IDE as a Maven or Gradle project, depending on what you chose when setting up the Spring Boot application
 
 Run the DemoApplication class to start the server
@@ -285,4 +273,14 @@ This setup demonstrates a basic long polling mechanism
 The client continuously sends requests to the server and waits for a response
 
 The server, upon receiving a request, simulates a delay to represent waiting for new data and then responds, triggering the client to immediately send another request
+
+In a real-world application, you should consider error handling, efficient resource use, and scalability
+
+### 3.1. Running the Server
+
+
+
+
+### 3.2. Running the Client
+
 
