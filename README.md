@@ -42,7 +42,21 @@ We also input the packaging type
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/59e838ab-6002-4893-b298-1531f49814d3)
 
+And we select the Java version
 
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/24632591-3abb-4208-b755-064a108f5207)
+
+In the dependencies we select **Spring Web** and press enter
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/c8c4e8a3-1e50-44ee-b3ef-4828a4798822)
+
+We have to select the folder where to place our project
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/2992a513-503f-4b24-8213-5d89d07cd36d)
+
+We press the **Open** button to start the project in another VSCode instance
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/69979e80-e734-49b2-9a8e-02acc929223d)
 
 This is the server project files and folders structure
 
