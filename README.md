@@ -76,6 +76,8 @@ This file contains both the main application class and the controller for handli
 
 Now, let's create a simple **Java client** that sends requests to the server and waits for the response:
 
+**LongPollingClient.java**
+
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
