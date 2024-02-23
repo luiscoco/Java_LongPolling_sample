@@ -12,11 +12,74 @@ Here's a basic example using Spring Boot for the server side to handle HTTP requ
 
 ## 1. Server Code (Spring Boot)
 
-Setup Spring Boot Application. First, create a Spring Boot application for your server
+First, create a Spring Boot application for your server
+
+```css
+long-polling-server/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── longpolling/
+│   │   │               ├── LongPollingServerApplication.java
+│   │   │               └── LongPollingController.java
+│   │   └── resources/
+│   │       └── application.properties
+└── pom.xml
+```
 
 You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new project with '**Spring Web**' dependency
 
 First, let's create the **server application**
+
+**pom.xml for Server**
+
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>long-polling-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>long-polling-server</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+
+
 
 Save this as **LongPollingController.java** in your Spring Boot project under the **src/main/java/com/example/demo** directory (or adjust the package name as per your setup):
 
