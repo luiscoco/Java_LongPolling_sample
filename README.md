@@ -49,7 +49,49 @@ public class LongPollingServerApplication {
 }
 ```
 
-We also input the pom.xml file with the libraries dependencies
+Now we input the controller file:
+
+ **LongPollingController.java**
+
+```java
+package com.example.longpolling;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+
+@RestController
+public class LongPollingController {
+
+    @GetMapping("/long-polling")
+    public String longPollingRequest() throws InterruptedException, ExecutionException {
+        CompletableFuture<String> futureData = getData();
+        return futureData.get();
+    }
+
+    private CompletableFuture<String> getData() {
+        return CompletableFuture.supplyAsync(() -> {
+            try {
+                Thread.sleep(10000); // Simulate a delay
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            return "New data available!";
+        });
+    }
+}
+```
+
+This controller simulates a delay (e.g., waiting for new data) and then returns a response
+
+In a real scenario, this **delay** represents the **server waiting for new data to become available**
+
+Make sure to update the **package name (com.example.demo)** to match your project's structure
+
+This file contains both the main application class and the controller for handling long polling
+
+We also input the **pom.xml** file with the libraries dependencies
 
 **pom.xml for Server**
 
@@ -95,48 +137,6 @@ We also input the pom.xml file with the libraries dependencies
     </build>
 </project>
 ```
-
-Now we input the controller file:
-
- **LongPollingController.java**
-
-```java
-package com.example.longpolling;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-
-@RestController
-public class LongPollingController {
-
-    @GetMapping("/long-polling")
-    public String longPollingRequest() throws InterruptedException, ExecutionException {
-        CompletableFuture<String> futureData = getData();
-        return futureData.get();
-    }
-
-    private CompletableFuture<String> getData() {
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                Thread.sleep(10000); // Simulate a delay
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            return "New data available!";
-        });
-    }
-}
-```
-
-This controller simulates a delay (e.g., waiting for new data) and then returns a response
-
-In a real scenario, this **delay** represents the **server waiting for new data to become available**
-
-Make sure to update the **package name (com.example.demo)** to match your project's structure
-
-This file contains both the main application class and the controller for handling long polling
 
 ## 2. Java Client for Long Polling
 
