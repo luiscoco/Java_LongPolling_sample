@@ -58,10 +58,13 @@ We press the **Open** button to start the project in another VSCode instance
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/69979e80-e734-49b2-9a8e-02acc929223d)
 
-This is the server project files and folders structure
+This is the default server project files and folders structure
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/73867784-bd2b-435f-971c-52659c775d6e)
+
+Now we have to create the server project files
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/7ac4314c-5077-4e4d-9172-447811e088e1)
-
 
 You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new project with '**Spring Web**' dependency
 
