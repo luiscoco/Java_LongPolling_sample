@@ -124,10 +124,6 @@ This controller simulates a delay (e.g., waiting for new data) and then returns 
 
 In a real scenario, this **delay** represents the **server waiting for new data to become available**
 
-Make sure to update the **package name (com.example.demo)** to match your project's structure
-
-This file contains both the main application class and the controller for handling long polling
-
 We also input the **pom.xml** file with the libraries dependencies
 
 **pom.xml for Server**
