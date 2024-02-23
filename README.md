@@ -48,4 +48,11 @@ public class LongPollingController {
 }
 ```
 
+This controller simulates a delay (e.g., waiting for new data) and then returns a response
+
+In a real scenario, this **delay** represents the **server waiting for new data to become available**
+
+
+
+
 ## 2. 
