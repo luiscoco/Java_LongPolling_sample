@@ -33,6 +33,24 @@ You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new 
 
 First, let's create the **server application**
 
+**LongPollingServerApplication.java**
+
+```java
+package com.example.longpolling;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LongPollingServerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(LongPollingServerApplication.class, args);
+    }
+}
+```
+
+We also input the pom.xml file with the libraries dependencies
+
 **pom.xml for Server**
 
 ```
@@ -78,43 +96,28 @@ First, let's create the **server application**
 </project>
 ```
 
-
-
-
-Save this as **LongPollingController.java** in your Spring Boot project under the **src/main/java/com/example/demo** directory (or adjust the package name as per your setup):
+Now we input the controller file:
 
  **LongPollingController.java**
 
 ```java
-package com.example.demo;
+package com.example.longpolling;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-@SpringBootApplication
-public class DemoApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
-}
-
 @RestController
-class LongPollingController {
+public class LongPollingController {
 
     @GetMapping("/long-polling")
     public String longPollingRequest() throws InterruptedException, ExecutionException {
         CompletableFuture<String> futureData = getData();
-        // Wait for data to become available
-        return futureData.get(); // This blocks the thread until data is available
+        return futureData.get();
     }
 
     private CompletableFuture<String> getData() {
-        // Simulate data fetching or processing delay
         return CompletableFuture.supplyAsync(() -> {
             try {
                 Thread.sleep(10000); // Simulate a delay
