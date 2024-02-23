@@ -186,17 +186,11 @@ server.port=8081
 
 ## 2. Java Client for Long Polling
 
-This is the client project files and folders structure:
+We create the client application following similar procedure as detailed in section 1 for the server
 
-```css
-long-polling-client/
-├── src/
-│   └── com/
-│       └── example/
-│           └── longpolling/
-│               └── LongPollingClient.java
-└── pom.xml (Optional, if you decide to use Maven for managing dependencies)
-```
+This is the project structure
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/9065a8c2-46d0-4546-8cc8-eb1a32e4a9c3)
 
 For a simple standalone Java application like this client, you might **not need a pom.xml** unless you plan to manage dependencies (e.g., for parsing JSON responses, etc.)
 
@@ -204,22 +198,22 @@ The client example provided doesn't require external libraries
 
 Now, let's create a simple **Java client** that sends requests to the server and waits for the response.
 
-Here's the complete **LongPollingClient.java** code for the client application that continuously sends long-polling requests to the server and processes the server's responses
+Here's the complete **LongPollingClientApplication.java** code for the client application that continuously sends long-polling requests to the server and processes the server's responses
 
-**LongPollingClient.java**
+**LongPollingClientApplication.java**
 
 ```java
-package com.example.longpolling;
+package com.example.longpollingclient;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class LongPollingClient {
+public class LongPollingClientApplication {
 
     public static void main(String[] args) {
-        final String urlString = "http://localhost:8080/long-polling";
+        final String urlString = "http://localhost:8081/long-polling";
         while (true) {
             try {
                 URL url = new URL(urlString);
