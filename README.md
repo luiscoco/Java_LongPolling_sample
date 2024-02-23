@@ -52,7 +52,43 @@ This controller simulates a delay (e.g., waiting for new data) and then returns 
 
 In a real scenario, this **delay** represents the **server waiting for new data to become available**
 
+## 2. Java Client for Long Polling
 
+Now, let's create a simple **Java client** that sends requests to the server and waits for the response:
 
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-## 2. 
+public class LongPollingClient {
+
+    public static void main(String[] args) throws Exception {
+        final String urlString = "http://localhost:8080/long-polling";
+        while (true) {
+            URL url = new URL(urlString);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            int status = con.getResponseCode();
+            if (status == HttpURLConnection.HTTP_OK) {
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer content = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                in.close();
+                System.out.println("Server response: " + content.toString());
+            } else {
+                System.out.println("Error: Failed to get the response from server.");
+            }
+            con.disconnect();
+
+            // Immediately send another request
+        }
+    }
+}
+```
+
