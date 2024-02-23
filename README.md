@@ -16,16 +16,32 @@ Setup Spring Boot Application. First, create a Spring Boot application for your 
 
 You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new project with '**Spring Web**' dependency
 
-Create a controller for handling long polling requests:
+First, let's create the **server application**
+
+Save this as **LongPollingController.java** in your Spring Boot project under the **src/main/java/com/example/demo** directory (or adjust the package name as per your setup):
+
+ **LongPollingController.java**
 
 ```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+@SpringBootApplication
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+
 @RestController
-public class LongPollingController {
+class LongPollingController {
 
     @GetMapping("/long-polling")
     public String longPollingRequest() throws InterruptedException, ExecutionException {
