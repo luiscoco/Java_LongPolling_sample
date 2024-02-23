@@ -66,23 +66,23 @@ Now we have to create the server project files
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/7ac4314c-5077-4e4d-9172-447811e088e1)
 
-You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new project with '**Spring Web**' dependency
-
-First, let's create the **server application**
+First, let's input the files codeç
 
 **LongPollingServerApplication.java**
 
 ```java
-package com.example.longpolling;
+package com.example.longpollingserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class LongPollingServerApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(LongPollingServerApplication.class, args);
-    }
+
+	public static void main(String[] args) {
+		SpringApplication.run(LongPollingServerApplication.class, args);
+	}
+
 }
 ```
 
@@ -91,7 +91,7 @@ Now we input the controller file:
  **LongPollingController.java**
 
 ```java
-package com.example.longpolling;
+package com.example.longpollingserver;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -133,54 +133,58 @@ We also input the **pom.xml** file with the libraries dependencies
 **pom.xml for Server**
 
 ```
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>long-polling-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>long-polling-server</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
-    <groupId>com.example</groupId>
-    <artifactId>long-polling-server</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <name>long-polling-server</name>
-    <description>Demo project for Spring Boot</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
 ```
 
 We also can provide the **application.properties** file
 
 ```
+# Server port (optional, default is 8080)
+server.port=8081
 
+# Context path (optional, default is "/")
+#server.servlet.context-path=/
 ```
-
 
 ## 2. Java Client for Long Polling
 
