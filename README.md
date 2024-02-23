@@ -10,7 +10,7 @@ or data to be available before responding to the client's request. The client, a
 
 Here's a basic example using Spring Boot for the server side to handle HTTP requests and a simple Java client using HttpURLConnection for making HTTP requests
 
-## 1. Server Code (Spring Boot)
+## 1. Create the Server (Spring Boot application) with VSCode
 
 First, create a Spring Boot application for your server in VSCode
 
