@@ -38,6 +38,11 @@ We finally input the Artifact Id and press enter
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/72c2e2a0-9c71-40f7-9b28-2c89d16017c0)
 
+We also input the packaging type
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/59e838ab-6002-4893-b298-1531f49814d3)
+
+
 
 This is the server project files and folders structure
 
