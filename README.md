@@ -68,6 +68,10 @@ This controller simulates a delay (e.g., waiting for new data) and then returns 
 
 In a real scenario, this **delay** represents the **server waiting for new data to become available**
 
+Make sure to update the **package name (com.example.demo)** to match your project's structure
+
+This file contains both the main application class and the controller for handling long polling
+
 ## 2. Java Client for Long Polling
 
 Now, let's create a simple **Java client** that sends requests to the server and waits for the response:
