@@ -12,22 +12,37 @@ Here's a basic example using Spring Boot for the server side to handle HTTP requ
 
 ## 1. Server Code (Spring Boot)
 
-First, create a Spring Boot application for your server
+First, create a Spring Boot application for your server in VSCode
 
-```css
-long-polling-server/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── example/
-│   │   │           └── longpolling/
-│   │   │               ├── LongPollingServerApplication.java
-│   │   │               └── LongPollingController.java
-│   │   └── resources/
-│   │       └── application.properties
-└── pom.xml
-```
+We create a new folder for placing our servera application and we open the folder with VSCode
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/bc2a8a79-fe39-4a61-904b-c2a7008eeeac)
+
+We press **Ctrl+Shift+P** and select ****
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/fd985093-5ac7-4942-a7fb-5c5d6f4ce70d)
+
+We select the SpringBoot version
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/37496917-5407-4712-85c1-ccbf7938b7f9)
+
+We also input the project language
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/856655f2-528e-4a67-9673-2f47ba028591)
+
+We input the Group Id for the project 
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/646a6680-0bf5-40b2-ae91-daa70157bcee)
+
+We finally input the Artifact Id and press enter
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/72c2e2a0-9c71-40f7-9b28-2c89d16017c0)
+
+
+This is the server project files and folders structure
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample-/assets/32194879/7ac4314c-5077-4e4d-9172-447811e088e1)
+
 
 You can use **Spring Initializr** (https://start.spring.io/) to bootstrap a new project with '**Spring Web**' dependency
 
@@ -137,6 +152,13 @@ We also input the **pom.xml** file with the libraries dependencies
     </build>
 </project>
 ```
+
+We also can provide the **application.properties** file
+
+```
+
+```
+
 
 ## 2. Java Client for Long Polling
 
