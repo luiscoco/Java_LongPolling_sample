@@ -292,4 +292,10 @@ We can see the server was started in port 8081 HTTP
 
 ### 3.2. Running the Client
 
+After running the server application we can proceed to run the client application
 
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/f9d63649-c471-4196-a7b1-fbdd0398a49b)
+
+We confirm we received the data from the server
+
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/de2fe087-a234-42b8-b86d-4ab614ed9841)
