@@ -92,3 +92,15 @@ public class LongPollingClient {
 }
 ```
 
+This client repeatedly sends GET requests to the server's /long-polling endpoint and prints out the server's response
+
+## 3. Running the Example
+
+Start the Spring Boot application by running the main class from your IDE or using the command line (./mvnw spring-boot:run if you're using Maven)
+
+Run the Java client by executing the LongPollingClient class
+
+The server will hold each client request for about 10 seconds (simulating data availability delay) before responding. Once the client receives the response, it immediately sends another request, demonstrating the long polling technique
+
+Remember, this is a basic example for demonstration purposes. In a real-world application, you should consider error handling, efficient resource use, and scalability
+
