@@ -12,6 +12,8 @@ The server will wait for a certain condition  or data to be available before res
 
 Here's a basic example using Spring Boot for the server side to handle HTTP requests and a simple Java client using HttpURLConnection for making HTTP requests
 
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/c9938cd0-b7f7-42a8-8e36-c1f586d1ffc5)
+
 ## 1. Create the Server (Spring Boot application) with VSCode
 
 First, create a Spring Boot application for your server in VSCode
