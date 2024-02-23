@@ -286,7 +286,9 @@ We press the run button
 
 ![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/414e9156-a299-41e4-a85b-a689bcd37dca)
 
+We can see the server was started in port 8081 HTTP
 
+![image](https://github.com/luiscoco/Java_LongPolling_sample/assets/32194879/02ec480c-71af-4ea3-a76e-7e2f99554ca7)
 
 ### 3.2. Running the Client
 
